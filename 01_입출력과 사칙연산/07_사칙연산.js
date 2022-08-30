@@ -17,8 +17,8 @@ let a = input[0]
 let b = input[1]
 
 //input에 저장된 값을 바꿔서 사용하면 된다
-//위의 .toString()을 보면 알 수 있듯이 값들이 문자로 저장되어 있기 때문에
-//parseInt 을 써서 숫자로 변환 해줘야 한다
+ //a/b는 나머지 나오면 떨구기 위해서 Math.floor 써야함
+
 
 console.log(a + b); // 출력
 console.log(a - b); 

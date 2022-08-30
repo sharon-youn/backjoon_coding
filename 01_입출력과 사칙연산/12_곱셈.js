@@ -1,11 +1,13 @@
+
 // 입력 
 //두 자연수 A와 B가 주어진다. (1 ≤ A, B ≤ 10,000)
 // 출력 
 //첫째 줄에 A+B, 둘째 줄에 A-B, 셋째 줄에 A*B, 넷째 줄에 A/B, 다섯째 줄에 A%B를 출력한다.
 const fs = require("fs");
  // node.js의 fs 모듈을 사용해 파일을 읽어온다
-
-const [a, b] =require('fs').readFileSync('dev/stdin').toString().split(" ").map(Number);
+// 출력이 다음 줄에 있을땐 \n으로 하고 
+// 옆에 있을떈 ' '로 하기!! 
+const [a, b] =require('fs').readFileSync('dev/stdin').toString().split('\n').map(Number);
 
 //require('fs').readFileSync('dev/stdin')
 // fs 모듈을 사용해 (`/dev/stdin`)안에 있는 파일을 읽어서 input에 넣는다
