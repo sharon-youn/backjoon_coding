@@ -28,7 +28,8 @@ if(a === b) {
   console.log('==')
 }
 
-
+// 다른 분들 풀이
+// a>b && console.log('>') -> if문을 굳이 쓰지 않아도 됨!
 
 
 
