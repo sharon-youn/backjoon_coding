@@ -1,6 +1,5 @@
-//두번째 방법.. 너무 안돼서 블로그검색
-// map(number) 대신 parseInt로 바꿔줌
-
+// 첫번째 방법 너무 장황하고 문제도 틀렸다고 나옴 
+// run.js
 // 입력 !
 //첫째 줄에는 현재 시각이 나온다. 현재 시각은 시 A (0 ≤ A ≤ 23) 와 분 B (0 ≤ B ≤ 59)가 정수로 빈칸을 사이에 두고 순서대로 주어진다. 두 번째 줄에는 요리하는 데 필요한 시간 C (0 ≤ C ≤ 1,000)가 분 단위로 주어진다. 
 
@@ -11,57 +10,39 @@ const fs = require("fs");
  // node.js의 fs 모듈을 사용해 파일을 읽어온다
 // 출력이 다음 줄에 있을땐 split('\n')으로 하고 
 // 옆에 있을떈 split(' ')로 하기!! 
-const input =require('fs').readFileSync('dev/stdin')
-.toString().split('\n')
-
+const [a,b,c] = require('fs').readFileSync('dev/stdin').toString().split(' ').map(Number)
 //require('fs').readFileSync('dev/stdin')
 // fs 모듈을 사용해 (`/dev/stdin`)안에 있는 파일을 읽어서 input에 넣는다
+
 // 읽어 온 값은 array로 저장된다
 // 입력 값 가져오기 + 데이터 정제
+//sort((x,y) => x-y) a,b,c오름차순 정렬 
 
 // 조건은 범위가 좁은것부터 넓게 우선순위 두기 
-// 모두 분으로 만들어주고 시간, 분 다시 구하기
-
-// 문제 이렇게 써있어서 밑에처럼 나눠서 넣어주기
-// 14 30
-// 20
-
-let A = parseInt(input[0].split(' ')[0]);
-let B = parseInt(input[0].split(' ')[1]);
-let C = parseInt(input[1]);
-
-let hour = 0;
-let min = 0;
-
-hour = Math.floor((A*60+B+C)/60)
-min = (A*60+B+C)%60
-
-if(hour>=24) {
-    hour -= 24
+//1.  먼저 셋다 같을 때 -> 10000+a*1000
+// 2. a =b or b=c일때 1000+b*100 -> 순서대로 sort했으니 b는 무조건 같은 수 
+// 3. 모두 다른 눈인 경우 c*100
+if(a === c) {
+  if(a === b) {
+    console.log(10000+(a*1000))
+  } else {
+    console.log(1000+(a*100))
+  }
+} else if(b === c) {
+  if(b === a) {
+    console.log(10000+(b*1000))
+  } else {
+    console.log(1000+(b*100))
+  }
+} else if(a === c) {
+  if(a === b) {
+    console.log(10000+(a*1000))
+  } else {
+    console.log(1000+(a*100))
+  }
+} 
+if(a !== c && b!==a && c!==a) {
+ console.log(c*100)
 }
 
-console.log(hour, min)
 
-
-// 다른 분 풀이
-// 시 분 runTime으로 나눠서
-// 분에다가 RunTime을 더한 변수를 만들었네 
-
-
-// let [curTime, runTime] = input
-// let [hour,min] = curTime.split(' ').map(item=>Number(item))
-// runTime = Number(runTime);
-
-// let finMin = min+runTime;
- 
-// if(finMin>=60){
-//     while(finMin>=60){
-//         hour++
-//         if(hour>23){
-//             hour = 0;
-//         }
-//         finMin = finMin - 60;
-//     }
-// }
-
-// console.log(`${hour} ${finMin}`)
