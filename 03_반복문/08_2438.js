@@ -13,7 +13,7 @@ const input= require('fs').readFileSync('dev/stdin').toString()
 // 5가 입력됐을때 *이 1,2,3,4,5 가 찍혀야한다.
 let result = ''; 
 let star = '*'
-// 테스트케이스 0번째 값 제외 1부터 시작! 
+// 1부터 5까지 반복되도록 1부터 시작
 for(let i =1; i<= input; i++) {
   result = result.concat(star)
   console.log(result)
