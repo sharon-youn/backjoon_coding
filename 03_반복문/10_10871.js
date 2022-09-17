@@ -26,3 +26,12 @@ for(let i = 0; i<N ; i++) {
 
 console.log(result)
 
+//삼항연산자 
+// arr[i]<X ? result += `${arr[i] `}: null;
+
+
+// join을 쓰는 사람도 있었다
+// for(let i=0; i<input2[0]; i++){
+//     if(numbers[i]<input2[1])result.push(numbers[i])
+// }
+// console.log(result.join(' '))

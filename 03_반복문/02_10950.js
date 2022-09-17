@@ -17,3 +17,7 @@ for(let i =1; i<= input[0]; i++) {
   
   console.log(A + B)
 }
+// 띄어쓰기 출력하려고 [0] [2]로 나눠줌 
+// for(let i=1; i<totalNum+1; i++){
+//   console.log( Number(input[i][0]) + Number(input[i][2]) );
+// }

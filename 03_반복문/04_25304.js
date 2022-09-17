@@ -19,6 +19,7 @@ let result = 0;
 // 1부터 count만큼 ! 이건 본인의 선택에 따라 0부터 count-1로 되고 상관없음
 for(let i =1; i<= count; i++) {
   // i가 1부터시작하니까 인덱스2부터 금액들이 나오니 i+1로 맞춰주기
+  // 구조 분해 할당 
   let [A, B] = input[i+1].split(' ').map(Number)
   result = result + A*B
 }
@@ -27,3 +28,5 @@ if(result === total) {
 } else {
     console.log('No')
 }
+// 삼항연산자 쓰는 연습하기 ! 
+// totalSum===receiptPrice ? console.log('Yes') : console.log('No');
