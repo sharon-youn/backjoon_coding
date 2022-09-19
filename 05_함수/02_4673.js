@@ -10,6 +10,7 @@ function selfNum() {
     let dn;
     let arr = [];
     // d(n)이 한자리수일때 등등 으로 나누기 
+    // n은 10000보다 작을때까지하고 n++로 마지막은 n은 10000으로 끝낼수있음 
     for(let n=0; n<10000; n++) {
         if(0<n && n<10) dn = 2*n
         else if(10<=n && n<100) dn = n+Math.floor(n/10) + n%10
