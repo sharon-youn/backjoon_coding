@@ -17,8 +17,6 @@ let index;
 //  식을 더 짧게하고 싶었으나 실패ㅠㅠㅠ 
 for(let i = 0; i<input.length; i++){
         // i는 0부터 시작하니까 순서 구하려면 +1 해주기
-   if(input[i] === max ) {
-    index = i+1 
-   }
+   input[i] === max ? index = i+1 : null;
 }
 console.log(max, index)
