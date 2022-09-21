@@ -15,8 +15,26 @@ let max = Math.max(...input)
 
 let index;
 //  식을 더 짧게하고 싶었으나 실패ㅠㅠㅠ 
+
 for(let i = 0; i<input.length; i++){
         // i는 0부터 시작하니까 순서 구하려면 +1 해주기
    input[i] === max ? index = i+1 : null;
 }
 console.log(max, index)
+
+// 인덱스 구하기 
+// arr indexof 배열 순환하는 것이 시간이 더 걸릴수있다! 
+// indexOf로 max 인덱스구해서 +1
+// console.log(input.indexOf(max) +1)
+
+//forEach 사용
+// let maxVal = input[0]
+// let maxIdx = 1; // 일단 설정..?
+// input.forEach((el, idx) => {
+//         if(el>maxVal) {
+//                 //el이 더 크면 
+//                 maxVal=el;
+//                 maxIdx= idx+1
+//         }
+// })
+

@@ -10,33 +10,45 @@ const input = require('fs').readFileSync('예제.txt').toString().split('\n')
 
 let T = Number(input[0])
 
-let result = 0;
-
+    // [a,...b] = [1,2,3,4,5]
+    // a => 1 b => 2,3,4,5
+// [numOfpe, ...subject] = input[i].split(" ");
 
 for(let i = 1; i<=T ; i++){
     // 한줄씩 arr로 받아오기 
     let arr = input[i].split(' ').map(Number)
     // console.log(arr)
-    result = 0;
+    let result = 0;
 
     for(let j =1; j<=arr[0]; j++) {
         // j+1부터 점수 시작 ~ 
+        // result에 각 케이스의 평균 
         result += arr[j]
         // console.log(result)
      }   
 
    // 평균 넘는 사람들 filter로 재정비 
+   // 평균이 넘는 값들을 리턴해라 
 let uniqueArr = arr.filter(el => el > result/ arr[0])
 // console.log(uniqueArr)
+// 평균넘는 점수들의 수 / 전체수 * 100
+// 숫자.toFixed(3) 3번째 자리수까지 나오고 반올림
+
 let el = (uniqueArr.length / arr[0] * 100).toFixed(3)
 // console.log(el)
-// 숫자.toFixed(3) 3번째 자리수까지 나오고 반올림
 
     console.log(el + '%' )
  
 }
+// 점수의 합구하기 reduce
+// const result = arr[i].reduce((acc,cur)=> {
+//     return acc+cur;
+// }, 0)
+// 평균
+// const avg= reesult/T
+// const cnt = arr[i].reduce((acc,cur) => {
+//     return result = cur>average?acc+1:acc;
 
-
-
+// }, 0)
 
 

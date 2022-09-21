@@ -16,3 +16,7 @@ let set = new Set(newArr)
 let newSet = [...set]
 
 console.log(newSet.length)
+
+// set 길이 
+// set.size = arr.length 
+// 중괄호로 반환돼서 객체느낌! 
