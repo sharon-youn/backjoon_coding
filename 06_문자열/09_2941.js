@@ -6,6 +6,8 @@ const input= require('fs').readFileSync('dev/stdin').toString().trim()
 
 let str = input;
 // console.log(str)
+//크로아티아 알파벳을 배열에 담아서 단어별로 split하고 '0'으로 만들기 
+
 let alpha = [
     'c=' ,
     'c-',

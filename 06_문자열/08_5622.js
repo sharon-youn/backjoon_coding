@@ -11,7 +11,8 @@ const input= require('fs').readFileSync('예제.txt').toString()
 // console.log(str[0])
 let result = 0
 let upper = {
-    // 1은 2초부터 그다움부터는 1초씩 더하기 
+ // 1은 2초부터 그다움부터는 1초씩 더하기 
+    // PQRS, WXYZ 주의 
     ABC :3,
     DEF: 4,
     GHI: 5,
@@ -21,11 +22,9 @@ let upper = {
     TUV: 9,
     WXYZ: 10,
 }
-// 알파벳 대문자 65~90
+
 for(let i =0; i<=input.length; i++) {
-    // A~O 까지는 3 나누기
-    // O~S는 4 79~83
-    // T~V는 3 , w~Z는 88~90
+  
     for(let el in upper) {
         if(el.includes(input[i])){
             result += upper[el]
