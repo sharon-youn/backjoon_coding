@@ -14,8 +14,10 @@ const input = require('fs').readFileSync('dev/stdin').toString().trim().split(' 
 // a b c  d   e  f g h i g  j l m n
 // 1 0 -1 -1 2  -1 -1 -1 -1 
 
+// input = ['backjoon'] -> 문자열 만들기 arr.join()
+// let str = input.join()
 
-let str = input.join()
+let str = input.join() // 배열-> 문자열로 만들기 
 let result = '';
 // console.log(str)
 let alpha = "abcdefghijklmnopqrstuvwxyz"
@@ -28,7 +30,18 @@ for(let i =0; i<alpha.length; i++) {
 } 
 console.log(result)
 
+
 // 아스키코드 이용
+// charCodeAt사용! 
+
+const startCode = 'a'.charCodeAt(); // 'a'의 아스키코드
+const endCode = 'z'.charCodeAt(); // 'z'의 아스키코드
+
+for(let i =startCode; i<=endCode; i++) {
+  // String.fromcharCode(아스키코드) -> 문자로 변환
+  // index에서 문자가 인덱스로 몇번째 있는지? 
+  console.log(input.indexOf(String.fromCharCode(i)))
+}
 
 // 아스키코드로 알파벳별 번호 매기고 단어에 해당하는 알파벳 있으면
 // 그 단어의 인덱스를 추출! 없으면 -1 

@@ -21,6 +21,9 @@ let alpha = [
 
 // console.log(str.split('lj').join('0'))
 
+// replace이나 replaceAll 쓰기
+// str = str.replaceAll(el, '0'); 이런식으로 
+// 모든 el을 0으로 다 바꿔주기! 
 for(let el of alpha) {
     // alpha의 el로 split하고 join으로 한 글자로 만들기
     // 'lj'로 Split하면 ->  ['' , 'es~' ]  
@@ -30,3 +33,11 @@ for(let el of alpha) {
 
 
   console.log(str.length)
+
+// replaceAll로 풀수 있음
+
+//   for (let el of alphabet) {
+//     input = input.replaceAll(el, '.');
+//   }
+  
+//   console.log(input.length);

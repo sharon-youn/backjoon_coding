@@ -10,13 +10,18 @@ const input = require('fs').readFileSync('dev/stdin').toString().trim().split('\
 // 입력으로 주어진 숫자 N개의 합을 출력
 
 let num = input[0]
-let str = input[1]
+let str = input[1] // 문자열
 let result = 0;
+
 
 
 for(let i =0; i<num; i++){
     // str -> 배열로  -> 문자열배열을 숫자 배열로 
    let arr = [...str].map(Number)
-   result = result + arr[i]
+   result += arr[i]
 }    
 console.log(result)
+
+// reduce 사용해보기! 
+// let sum = str.reduce((a,b) => a+b);
+// console.log(sum)

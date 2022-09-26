@@ -29,3 +29,7 @@ if(lower.includes(input)) {
 if(num.includes(input)){
     console.log(num.indexOf(input)+48)
 }
+
+// 한줄 풀이
+// string.charCodeAt()은 아스키 코드를 반환한다! 
+// console.log(input.charCodeAt())
