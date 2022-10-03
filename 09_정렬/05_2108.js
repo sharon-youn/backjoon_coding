@@ -1,6 +1,6 @@
 const fs = require("fs");
 // 옆에 있을떈 split(' ')로 하기!! 
-const input= fs.readFileSync('dev/stdin').toString().trim().split('\n').map(Number)
+const input= fs.readFileSync('예제.txt').toString().trim().split('\n').map(Number)
 
 //require('fs').readFileSync('dev/stdin')
 //예제.txt
@@ -34,7 +34,7 @@ console.log(newArr[Math.floor(newArr.length/2)])
 let obj = {}
 for(let i =0; i<num; i++) {
     if(obj[input[i]] === undefined) {
-        // 없으면 obj에 char : 1 생성
+        // 없으면 obj에 "숫자" : 1 생성
          obj[input[i]] = 1; 
      } else {
          // 있으면 1 증가
@@ -48,27 +48,27 @@ let count = 0;
 let result = [];
 for(let key in obj) {
     if(count < obj[key]) {
-        // obj[key]가 더 크면 count 바꿔주기
+        // count보다 obj[key]가 더 크면 count 바꿔주기
         count = obj[key]
-        // result 리셋 -> 큰 값이 여러개 있을 수 있음! 
+        // result 리셋 -> 큰 값이 여러개 있을 수 있으니 
+        // console.log(result)
         result = [];
         result.push(key);
-    } else if (count === obj[key]) {
-        result.push(key)
-    }
-}
-// if(result.length > 1) {
-// console.log(result.sort((a,b)=>a-b)[1])
+        console.log(result)
 
-// } else {
-//     console.log(result.join())
-// }
+    } else if (count === obj[key]) {
+        // 최빈값 같은 거 있으면 result에 일단 push
+        result.push(key)
+        // console.log(result)
+
+    }
+    // console.log(result)
+
+}
+// result 길이 1보다 크면 2번째로 작은수 , 하나밖에 없으면 [0]
 console.log(result.length > 1? Number(result.sort((a,b)=>a-b)[1]) : Number(result[0]) )
 
 
 // 4. 범위 ( N개의 수들 중 최댓값과 최솟값의 차이)
-// let max = Math.max(...newArr)
-// console.log(max)
-// let min = Math.min(...newArr)
-// console.log(min)
+
 console.log( Math.max(...newArr)- Math.min(...newArr))
